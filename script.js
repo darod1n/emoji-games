@@ -1,7 +1,7 @@
 (function init(){
     const cards = Array.from(document.querySelectorAll('.card'));
     cards.forEach((card) => {card.addEventListener('click', clickEvent); });
-});
+}());
 
 function clickEvent(){
     const opened = this.classList.contains('open');
