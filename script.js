@@ -9,7 +9,7 @@ function clickEvent(){
         this.classList.remove('close');
         this.classList.add('open');
     } else {
-        this.classList.remove('close');
-        this.classList.add('close')
+        this.classList.remove('open');
+        this.classList.add('close');
     }
 }
