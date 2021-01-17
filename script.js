@@ -13,6 +13,12 @@ class GameProcess{
         this.cardElems = cardElems;
         this.cardsList = [];
     }
+    coupleEmoji(emojiList){
+        const arr = emojiList.map((emoji, id) => ({
+            emoji, id,
+        }));
+        return arr.concat(arr);
+    }
 }
 
 function shuffleArr(arr){
