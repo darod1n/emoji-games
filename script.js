@@ -4,6 +4,17 @@ const enumStatus = {
     SUCCESS: 'success',
     WRONG: 'wrong',
 };
+
+class GameProcess{
+    constructor({emojiList, cardsField, cardElems}){
+        //создаем массив парных изображений
+        this.emojiList = this.coupleEmoji(emojiList);
+        this.cardsField = cardsField;
+        this.cardElems = cardElems;
+        this.cardsList = [];
+    }
+}
+
 function shuffleEmoji(arr){
     return arr.sort(() => Math.random()-0.5);
 }
