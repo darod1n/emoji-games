@@ -1,6 +1,10 @@
 function shuffleEmoji(arr){
     return arr.sort(() => Math.random()-0.5);
 }
+
+function coupleArr(arr){
+    return [].concat(arr, arr);
+}
   
 (function init() {
     const emoji = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
