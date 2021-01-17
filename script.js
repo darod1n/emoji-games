@@ -12,12 +12,20 @@ class GameProcess{
         this.cardsField = cardsField;
         this.cardElems = cardElems;
         this.cardsList = [];
+        this.initCards();
     }
     coupleEmoji(emojiList){
         const arr = emojiList.map((emoji, id) => ({
             emoji, id,
         }));
         return arr.concat(arr);
+    }
+    initCards(){
+        //перемешиваем массив
+        this.shuffleEmoji()
+    }
+    shuffleEmoji(){
+        this.emojiList = this.emojiList.sort(() => Math.random() - 0.5)
     }
 }
 
