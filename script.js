@@ -23,9 +23,22 @@ class GameProcess{
     initCards(){
         //перемешиваем массив
         this.shuffleEmoji()
+        //создаем карточки на основе узлов .card, которые мы нашли
+        this.cardsList = this.cardElems.map(
+            (card, index) => new Card(card, this.emojiList[index])
+        );
     }
     shuffleEmoji(){
         this.emojiList = this.emojiList.sort(() => Math.random() - 0.5)
+    }
+}
+
+class Card{
+    constructor(node, {id, emoji}){
+        this.node = node;
+        this.id = id;
+        this.status = enumStatus.CLOSE;
+        this.node.textContent = emoji;
     }
 }
 
