@@ -76,6 +76,16 @@ class Card{
         this.addClass('close');
         this.status = enumStatus.CLOSE;
     }
+    success(flip){
+        this.removeClass('close');
+        this.addClass(flip ? 'open-success' : 'success');
+        this.status = enumStatus.SUCCESS;
+    }
+    wrong(flip){
+        this.removeClass('close');
+        this.addClass(flip ? 'open-wrong' : 'wrong');
+        this.status = enumStatus.WRONG;
+    }
 }
 
 function shuffleArr(arr){
