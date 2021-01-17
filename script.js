@@ -66,6 +66,16 @@ class Card{
     clearContext(){
         ['open', 'wrong', 'success', 'open-success', 'open-wrong'].forEach((n) => this.removeClass(n));
     }
+    open(){
+        this.removeClass('close');
+        this.addClass('open');
+        this.status = enumStatus.OPEN;
+    }
+    close(){
+        this.clearContext();
+        this.addClass('close');
+        this.status = enumStatus.CLOSE;
+    }
 }
 
 function shuffleArr(arr){
