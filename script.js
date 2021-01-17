@@ -5,6 +5,10 @@ function shuffleEmoji(arr){
 function coupleArr(arr){
     return [].concat(arr, arr);
 }
+
+function fillCards(cards, emoji){
+    cards.forEach((card, index)=>{card.textContent = emoji[index]});
+}
   
 (function init() {
     const emoji = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
