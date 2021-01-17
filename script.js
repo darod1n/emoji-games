@@ -51,6 +51,21 @@ class Card{
         this.status = enumStatus.CLOSE;
         this.node.textContent = emoji;
     }
+    getStatus(){
+        return this.status;
+    }
+    getId(){
+        return this.id;
+    }
+    addClass(name){
+        this.node.classList.add(name);
+    }
+    removeClass(name){
+        this.node.classList.remove(name)
+    }
+    clearContext(){
+        ['open', 'wrong', 'success', 'open-success', 'open-wrong'].forEach((n) => this.removeClass(n));
+    }
 }
 
 function shuffleArr(arr){
