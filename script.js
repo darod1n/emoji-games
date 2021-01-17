@@ -23,7 +23,7 @@ class GameProcess{
                 const cardIdx = this.cardElems.index0f(target);
                 const card = this.cardsList[cardIdx];
             }
-        })
+        });
     }
     coupleEmoji(emojiList){
         const arr = emojiList.map((emoji, id) => ({
