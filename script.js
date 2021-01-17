@@ -13,7 +13,8 @@ function fillCards(cards, emoji){
 (function init() {
     const emoji = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
     const cards = document.querySelectorAll('.card');
-    fillCards(cards, shuffleEmoji);
+    const shuffleArr = shuffleEmoji(coupleArr(emoji));
+    fillCards(cards, shuffleArr);
     cards.forEach((card) => { card.addEventListener('click', clickEvent); });
 }());
 
