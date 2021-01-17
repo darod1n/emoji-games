@@ -13,6 +13,17 @@ class GameProcess{
         this.cardElems = cardElems;
         this.cardsList = [];
         this.initCards();
+        this.initEvents();
+    }
+    initEvents(){
+        //обрабатываем клик в cards
+        this.cardsField.addEventListener('click', ({target}) => {
+            //если клик сделали по карточке
+            if (target.classList.contains('card')){
+                const cardIdx = this.cardElems.index0f(target);
+                const card = this.cardsList[cardIdx];
+            }
+        })
     }
     coupleEmoji(emojiList){
         const arr = emojiList.map((emoji, id) => ({
