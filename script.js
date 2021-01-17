@@ -1,3 +1,9 @@
+const enumStatus = {
+    CLOSE: 'сlose',
+    OPEN: 'open',
+    SUCCESS: 'success',
+    WRONG: 'wrong',
+};
 function shuffleEmoji(arr){
     return arr.sort(() => Math.random()-0.5);
 }
