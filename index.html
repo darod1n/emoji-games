@@ -1,42 +1,39 @@
-  
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Наша игра</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        
-    </head>
-    <body>
-        <header>Memoji</header>
-        <main class="cards">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-        </main>
-        <div class="alert invisible">
-            <div class="alert__window">
-                <div class="alert__content">
-                    <div class="alert_message lose invisible">
-                        <span>Вы проиграли</span>
-                    </div>
-                    <div class="alert_message win invisible">
-                        <span>Поздравляем с победой</span>
-                    </div>
-                    <button class="alert__button">Играть снова</button>
-                </div>
+
+<head>
+    <title>Memoji</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>Memoji</header>
+    <main class="cards">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </main>
+    <div class="alert invisible">
+        <div class="alert__window">
+            <div class="alert__content">
+                <div class="alert__message lose invisible"><span>Вы проиграли</span></div>
+                <div class="alert__message win invisible"><span>Поздравляем с победой!</span></div>
+                <button class="alert__button">Играть снова</button>
             </div>
         </div>
-        <div class="timer"></div>
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <div class="timer"></div>
+    <script src="script.js"></script>
+</body>
+
 </html>
