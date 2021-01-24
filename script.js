@@ -29,6 +29,26 @@ class GameProcess{
             }
         });
     }
+    closeWrong(){
+        this.cardsList.filter(
+            (x) => x.getStatus() === enumStatus.WRONG
+        ).forEach((x) => x.close());
+    }
+    checkCards(card){
+        const findOpenCard = this.cardsList.find((x) => x.getStatus() === enumStatus.OPEN);
+        if (findOpenCard){
+            const isCouple = card.getId() === findOpenCard.getId();
+            if(isCouple){
+                findOpenCard.success();
+                card.success(true);
+            } else {
+                findOpenCard.wrong();
+                card.wrong(true);
+            }
+        } else {
+            card.open();
+        }
+    }
     coupleEmoji(emojiList){
         const arr = emojiList.map((emoji, id) => ({
             emoji, id,
