@@ -187,7 +187,7 @@ function fillCards(cards, emoji){
 }
   
 (function init() {
-    const emoji = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
+    const emojiList = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
     const cards = document.querySelectorAll('.card');
     const shuffleEmoji = shuffleArr(coupleArr(emoji));
     const timerNode = document.querySelector('.timer');
