@@ -144,6 +144,8 @@ function fillCards(cards, emoji){
     const emoji = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
     const cards = document.querySelectorAll('.card');
     const shuffleEmoji = shuffleArr(coupleArr(emoji));
+    const timerNode = document.querySelector('.timer');
+    const alertNode = document.querySelector('.alert');
     fillCards(cards, shuffleEmoji);
     cards.forEach((card) => { card.addEventListener('click', clickEvent); });
 }());
