@@ -5,6 +5,13 @@ const enumStatus = {
     WRONG: 'wrong',
 };
 
+function secondToTime(s){
+    const minutes = Math.floor(s / 60);
+    const _seconds = s % 60;
+    const secondsFormat = _seconds < 10 ? `0${_seconds}` : _seconds.toString();
+    return `${minutes}:${secondsFormat}`;
+}
+
 class GameProcess{
     constructor({emojiList, cardsField, cardElems}){
         //создаем массив парных изображений
