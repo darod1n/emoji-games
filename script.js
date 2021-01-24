@@ -76,6 +76,10 @@ class GameProcess{
         ).forEach((x) => x.close());
     }
     checkCards(card){
+        if (!this.gameStarted){
+            this.gameStarted = true;
+            this.initTimer();
+        }
         const findOpenCard = this.cardsList.find((x) => x.getStatus() === enumStatus.OPEN);
         if (findOpenCard){
             const isCouple = card.getId() === findOpenCard.getId();
@@ -88,6 +92,9 @@ class GameProcess{
             }
         } else {
             card.open();
+        }
+        if (this.cardsList.every((x) => x.getStatus() === enumStatus.SUCCESS)){
+            this.endGame(true);
         }
     }
     coupleEmoji(emojiList){
