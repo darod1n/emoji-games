@@ -22,6 +22,10 @@ class GameProcess{
             if (target.classList.contains('card')){
                 const cardIdx = this.cardElems.index0f(target);
                 const card = this.cardsList[cardIdx];
+                if (card.getStatus() === enumStatus.CLOSE){
+                    this.closeWrong();
+                    this.checkCards(card);
+                }
             }
         });
     }
