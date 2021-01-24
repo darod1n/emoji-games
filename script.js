@@ -48,6 +48,8 @@ class GameProcess{
     clearContext(){
         this.gameStarted = false;
         ['win', 'lose'].forEach((i) => {
+            console.log(this.alertNode)
+            console.log(this.alertNode.querySelector(`.${i}`))
             this.alertNode.querySelector(`.${i}`).classList.add('invisible');
         });
         this.alertNode.classList.add('invisible');
@@ -71,9 +73,9 @@ class GameProcess{
         });
     }
     closeWrong(){
-        this.cardsList.filter(
-            (x) => x.getStatus() === enumStatus.WRONG
-        ).forEach((x) => x.close());
+        this.cardsList
+            .filter((x) => x.getStatus() === enumStatus.WRONG)
+            .forEach((x) => x.close());
     }
     restartGame(){
         this.cardsList.forEach((x) => x.close());
@@ -90,14 +92,14 @@ class GameProcess{
         this.alertNode.classList.remove('invisible');
     }
     checkCards(card){
-        if (!this.gameStarted){
+        if (!this.gameStarted) {
             this.gameStarted = true;
             this.initTimer();
         }
         const findOpenCard = this.cardsList.find((x) => x.getStatus() === enumStatus.OPEN);
-        if (findOpenCard){
+        if (findOpenCard) {
             const isCouple = card.getId() === findOpenCard.getId();
-            if(isCouple){
+            if (isCouple) {
                 findOpenCard.success();
                 card.success(true);
             } else {
@@ -107,15 +109,16 @@ class GameProcess{
         } else {
             card.open();
         }
-        if (this.cardsList.every((x) => x.getStatus() === enumStatus.SUCCESS)){
+        if (this.cardsList.every((x) => x.getStatus() === enumStatus.SUCCESS)) {
             this.endGame(true);
         }
     }
     coupleEmoji(emojiList){
         const arr = emojiList.map((emoji, id) => ({
-            emoji, id,
+            emoji,
+            id,
         }));
-        return arr.concat(arr);
+        return [].concat(arr, arr);
     }
     initCards(){
         //перемешиваем массив
@@ -176,26 +179,15 @@ class Card{
   
 (function init() {
     const emojiList = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
-    const cards = document.querySelector('.card');
-    const shuffleEmoji = shuffleArr(coupleArr(emojiList));
+    const cardsField = document.querySelector('.cards');
+    const cardElems = Array.from(cardsField.querySelectorAll('.card'));
     const timerNode = document.querySelector('.timer');
     const alertNode = document.querySelector('.alert');
     new GameProcess({
         emojiList,
-        cards,
-        shuffleEmoji,
+        cardsField,
+        cardElems,
         timerNode,
-        alertNode
-    })
+        alertNode,
+    });
 }());
-
-function clickEvent() {
-    const opened = this.classList.contains('open');
-    if (!opened) {
-      this.classList.remove('close');
-      this.classList.add('open');
-    } else {
-      this.classList.remove('open');
-      this.classList.add('close');
-    }
-}
