@@ -189,7 +189,7 @@ function fillCards(cards, emoji){
 (function init() {
     const emojiList = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
     const cards = document.querySelectorAll('.card');
-    const shuffleEmoji = shuffleArr(coupleArr(emoji));
+    const shuffleEmoji = shuffleArr(coupleArr(emojiList));
     const timerNode = document.querySelector('.timer');
     const alertNode = document.querySelector('.alert');
     new GameProcess({
