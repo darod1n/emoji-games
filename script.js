@@ -72,7 +72,7 @@ class GameProcess {
         this.alertNode = alertNode;
         this.cardsList = [];
         this.timerOpts = {
-            seconds: 60,
+            seconds: 30,
         };
         this.init();
     }
