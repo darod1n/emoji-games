@@ -77,3 +77,41 @@ main {
     color: rgb(rgb(41, 116, 179), rgb(39, 207, 39), rgb(139, 139, 207));
 }
 
+.alert{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(139, 139, 207);
+    font-weight: bold;
+}
+
+.alert__window{
+    min-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.alert__content{
+    background-color: rgb(39, 207, 39);
+    text-align: center;
+    border-radius: 25px;
+    padding: 10%;
+}
+
+.alert__message{
+    padding-top: 30px;
+    font-size: 48px;
+}
+
+.alert__button{
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin: 40px 0 30px;
+    border-radius: 7px;
+    background: linear-gradient(to left, rgb(39, 207, 39), rgb(139, 139, 207));
+}
