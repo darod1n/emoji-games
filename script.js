@@ -33,6 +33,17 @@ class GameProcess{
         this.initEvents();
         this.setTime(this.timerOpts.seconds);
     }
+    initTimer(){
+        let {seconds} = this.timerOpts;
+        this.timeId = setInterval(() => {
+            seconds--;
+            this.setTime(seconds);
+            if(!seconds){
+                this.endGame(false);
+
+            }
+        }, 1000);
+    }
  
     clearContext(){
         this.gameStarted = false;
