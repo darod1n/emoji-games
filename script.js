@@ -173,22 +173,10 @@ class Card{
         this.status = enumStatus.WRONG;
     }
 }
-
-function shuffleArr(arr){
-    return arr.sort(() => Math.random()-0.5);
-}
-
-function coupleArr(arr){
-    return [].concat(arr, arr);
-}
-
-function fillCards(cards, emoji){
-    cards.forEach((card, index)=>{card.textContent = emoji[index]});
-}
   
 (function init() {
     const emojiList = '💀 ☠️ 👽 👾 🤖 🎃'.split(' ')
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelector('.card');
     const shuffleEmoji = shuffleArr(coupleArr(emojiList));
     const timerNode = document.querySelector('.timer');
     const alertNode = document.querySelector('.alert');
