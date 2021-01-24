@@ -66,3 +66,14 @@ main {
         transform: rotateY(180deg);
     }
 }
+
+.timer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    color: rgb(rgb(41, 116, 179), rgb(39, 207, 39), rgb(139, 139, 207));
+}
+
