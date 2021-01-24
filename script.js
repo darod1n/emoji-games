@@ -22,10 +22,15 @@ class GameProcess{
         this.initCards();
         this.initEvents();
         this.timerNode = timerNode;
+        this.timerOpts = {
+            seconds: 1,
+        }
+        this.init();
     }
     init(){
         this.initCards();
         this.initEvents();
+        this.setTime(this.timerOpts.seconds);
     }
 
     setTime(){
