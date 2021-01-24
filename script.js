@@ -13,7 +13,7 @@ function secondToTime(s){
 }
 
 class GameProcess{
-    constructor({emojiList, cardsField, cardElems}){
+    constructor({emojiList, cardsField, cardElems, timerNode}){
         //создаем массив парных изображений
         this.emojiList = this.coupleEmoji(emojiList);
         this.cardsField = cardsField;
@@ -21,10 +21,15 @@ class GameProcess{
         this.cardsList = [];
         this.initCards();
         this.initEvents();
+        this.timerNode = timerNode;
     }
     init(){
         this.initCards();
         this.initEvents();
+    }
+
+    setTime(){
+        this.timerNode.textContent = secondToTime(seconds);
     }
     initEvents(){
         //обрабатываем клик в cards
