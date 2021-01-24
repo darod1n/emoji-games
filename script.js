@@ -75,6 +75,20 @@ class GameProcess{
             (x) => x.getStatus() === enumStatus.WRONG
         ).forEach((x) => x.close());
     }
+    restartGame(){
+        this.cardsList.forEach((x) => x.close());
+        this.initCards();
+        this.setTime(this.timerOpts.seconds);
+        this.clearContext();
+    }
+    endGame(win){
+        clearInterval(this.timeId);
+        const status = win ? 'win' : 'lose';
+        const btnText = win ? 'Играть снова' : 'Попробовать снова';
+        this.alertNode.querySelector('.alert__button').textContent = btnText;
+        this.alertNode.querySelector(`.${status}`).classList.remove('invisible');
+        this.alertNode.classList.remove('invisible');
+    }
     checkCards(card){
         if (!this.gameStarted){
             this.gameStarted = true;
