@@ -15,6 +15,10 @@ class GameProcess{
         this.initCards();
         this.initEvents();
     }
+    init(){
+        this.initCards();
+        this.initEvents();
+    }
     initEvents(){
         //обрабатываем клик в cards
         this.cardsField.addEventListener('click', ({target}) => {
